@@ -2,7 +2,7 @@ policy_hackathon
 ================
 
 IIM Bangalore Policy Hackathon 2014 
-
+Team - Common Man
 Live Website avaialble on 
 
 http://ctdkarnata.zense.co.in
