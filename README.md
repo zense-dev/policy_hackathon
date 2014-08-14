@@ -1,4 +1,4 @@
-policy_hackathon
+olicy_hackathon
 ================
 
 IIM Bangalore Policy Hackathon 2014 
@@ -38,3 +38,5 @@ How to install and run this application
 
 In case you need any help with this then do contact 
 vikas.yadav@iiitb.org
+
+NOTE: I'll sugest you to contribute here only if you know about the codeigniter framework or some MVC architecture in general, Otherwise you can mail your simple code with all the requirements and I will integrate it. 
