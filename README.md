@@ -26,4 +26,15 @@ Advanced Features (under Development)
     
 2. Fully implement a live SMS Gateway
 3. A working admin console. 
-    Details will be shared with anyone who's interested 
+    Details will be shared with anyone who's interested
+
+
+How to install and run this application 
+1. Apache and mysql should be installed 
+2. Make a new database in mysql named "policy_hack"
+3. Import the file policy_hack.sql
+4. Go to application/config/database.php
+5. Change the database information there 
+
+In case you need any help with this then do contact 
+vikas.yadav@iiitb.org
