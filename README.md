@@ -7,7 +7,7 @@ Live Website avaialble on
 
 http://ctdkarnata.zense.co.in
 
-A central repository of all government schemes. Fully croud sourced.
+A central repository of all government schemes. Fully crowd sourced.
 
 All the features are in development stage right now. Contributions are always welcome.
 
