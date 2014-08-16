@@ -1,4 +1,4 @@
-olicy_hackathon
+Policy_hackathon
 ================
 
 IIM Bangalore Policy Hackathon 2014 
