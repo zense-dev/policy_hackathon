@@ -3,9 +3,9 @@ Policy_hackathon
 
 IIM Bangalore Policy Hackathon 2014 
 Team - Common Man
-Live Website avaialble on 
+Live Website available on 
 
-http://ctdkarnata.zense.co.in
+http://ctdkarnataka.zense.co.in
 
 A central repository of all government schemes. Fully crowd sourced.
 
