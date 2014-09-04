@@ -59,6 +59,30 @@ class Policy extends CI_Controller
         //User already logged in
     }
 
+    public function home1(){
+        if($this->check_login()==1){
+            $this->load->model('policy_model');
+            $data = $this->policy_model->get_schemes();
+
+            $this->load->view('policy/viewscheme1', array('content'=>$data));
+        }
+        else{
+            $this->load->view('policy/login', array('content'=>''));
+        }
+
+        //User already logged in
+    }
+
+    public function schemes_json(){
+        $this->load->model('policy_model');
+        $val = $this->policy_model->schemes_json();
+
+        $this->output->set_content_type('application/json');
+        $json = $this->output->set_output(json_encode($val));
+        //return to the view once reach here
+        return $val;
+    }
+
     public function home_first(){
         //First time user or not logged in user coming to home
     }
@@ -353,7 +377,7 @@ scheme_age=on&scheme_family=on&scheme_why=&scheme_help=&scheme_other_details=
                 $data['scheme_id'] = $this->input->post('scheme_id');
 
                 $this->load->model('policy_model');
-                $policy_id = $this->policy_model->modify_scheme($data);
+                $this->policy_model->modify_scheme($data);
 
 
                 $eligibility_data['data'] = array(
@@ -365,7 +389,7 @@ scheme_age=on&scheme_family=on&scheme_why=&scheme_help=&scheme_other_details=
                     'poverty_level'=> $this->input->post('scheme_gender')
                 );
 
-                $eligibility_data['scheme_id'] = $policy_id;
+                $eligibility_data['scheme_id'] = $this->input->post('scheme_id');
 
                 $this->policy_model->modify_eligibility($eligibility_data);
             }
@@ -402,7 +426,7 @@ scheme_age=on&scheme_family=on&scheme_why=&scheme_help=&scheme_other_details=
     }
 
     public function search(){
-        $string = $this->input->get('string');
+        $string = $this->input->get('string', TRUE);
         $this->load->model('policy_model');
         $results = $this->policy_model->search($string);
         $this->load->view('policy/search', array('content'=>$results));

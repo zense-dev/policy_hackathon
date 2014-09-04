@@ -60,8 +60,31 @@
     }
 
     public function page_view($data){
-        $query = $this->db->get_where('schemes', $data);
-        return $query->result();
+        /*
+         * SELECT schemes . * , eligibility . *
+FROM schemes
+INNER JOIN eligibility ON schemes.scheme_id = eligibility.parent_id
+LIMIT 0 , 30
+         */
+        $scheme_id = $data['scheme_id'];
+        $newquery = $this->db->query(
+            'SELECT schemes. * , eligibility. *
+             FROM schemes
+             INNER JOIN eligibility ON schemes.scheme_id = eligibility.parent_id
+             WHERE schemes.scheme_id ='.$scheme_id
+            );
+        //$query = $this->db->get_where('schemes', $data);
+        return $newquery->result();
+    }
+
+    public function schemes_json(){
+        $newquery = $this->db->query(
+            'SELECT schemes. * , eligibility. *
+             FROM schemes
+             INNER JOIN eligibility ON schemes.scheme_id = eligibility.parent_id'
+        );
+        //$query = $this->db->get_where('schemes', $data);
+        return $newquery->result();
     }
 
     public function insert_scheme($data){
@@ -76,6 +99,7 @@
     public function modify_scheme($data){
         $this->db->where('scheme_id', $data['scheme_id']);
         $this->db->update('schemes', $data['data']);
+        return $this->db->insert_id();
     }
 
     public function modify_eligibility($data){
@@ -88,6 +112,7 @@
     }
 
     public function get_schemes(){
+        $this->db->select('scheme_id, scheme_name, scheme_flag, scheme_objectives');
         $query = $this->db->get('schemes');
         return $query->result();
     }

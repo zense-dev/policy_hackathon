@@ -195,8 +195,13 @@ function agegroup($var){
 													<div class="widget-body">
 														<div class="widget-main padding-4">
 															<div class="scrollable" data-height="125">
-																<div class="content">
-																	<div class="alert alert-info">';
+																<div class="content">';
+                if($row->scheme_flag==1){
+                    echo '<div class="alert alert-warning">';
+                }
+                else{
+                    echo '<div class="alert alert-info">';
+                }
                 echo $row->scheme_objectives;
                 echo '<br>
 																		<a href="'.base_url().'policy/viewpage/'.$row->scheme_id.'" class="label label-success">Read More</a>
@@ -219,8 +224,13 @@ function agegroup($var){
 											<div class="widget-body">
 												<div class="widget-main padding-4">
 													<div class="scrollable" data-height="125">
-														<div class="content">
-															<div class="alert alert-info">';
+														<div class="content">';
+                if($row->scheme_flag==1){
+                    echo '<div class="alert alert-warning">';
+                }
+                else{
+                    echo '<div class="alert alert-info">';
+                }
                 echo $row->scheme_objectives;
                 echo '<br>
 																<a href="'.base_url().'policy/viewpage/'.$row->scheme_id.'" class="label label-success">Read More</a>
@@ -243,8 +253,14 @@ function agegroup($var){
 											<div class="widget-body">
 												<div class="widget-main padding-4">
 													<div class="scrollable" data-height="125">
-														<div class="content">
-															<div class="alert alert-info">';
+														<div class="content">';
+                if($row->scheme_flag==1){
+                    echo '<div class="alert alert-warning">';
+                }
+                else{
+                    echo '<div class="alert alert-info">';
+                }
+
                 echo $row->scheme_objectives;
                 echo '<br>
 																<a href="'.base_url().'policy/viewpage/'.$row->scheme_id.'" class="label label-success">Read More</a>

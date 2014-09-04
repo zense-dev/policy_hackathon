@@ -284,10 +284,10 @@ function agegroup($var){
 										<div class="widget-body">
 											<div class="widget-main">
 												<ol>
-													<li><dt>Area</dt><p>All</p></li>
-													<li><dt>Gender</dt><p>All</p></li>
-													<li><dt>Marital Status</dt><p>All</p></li>
-													<li><dt>Income Range</dt><p>All</p></li>
+													<li><dt>Area</dt><p><?php echo specific_for($content[0]->area);?></p></li>
+													<li><dt>Gender</dt><p><?php echo gender($content[0]->gender);?></p></li>
+													<li><dt>Marital Status</dt><p><?php echo marital_status($content[0]->marital_status);?></p></li>
+													<li><dt>Income Range</dt><p><?php echo poverty($content[0]->poverty_level);?></p></li>
 												</ol>
 											</div>
 										</div>
