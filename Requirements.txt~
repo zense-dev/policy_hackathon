@@ -1,0 +1,10 @@
+Files
+1. WebApp Contains All the files required to be put on the server
+2. Android_SM_Gateway.zip contains Android code for sms gateway 
+
+
+Dependencies 
+
+1. A web server running with codeigniter framework installed
+2. Android SDK to install the SMS Gateway running on android
+3. Import the database file provided by us into MySQL

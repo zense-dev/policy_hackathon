@@ -1,0 +1,22 @@
+#! /bin/bash
+
+secs=$(perl -e 'print time(), "\n"')
+
+((targetsecs = secs+40))
+
+#Go to directory where the script the php interpreter is stored or 
+#use the link of php location
+
+#Line below is not mandatory, use if needed
+cd /home/bobo
+
+while ((secs < targetsecs)) ; do
+	./php /opt/lampp/htdocs/eventchum/crons/send_email.php
+	sleep 2
+	echo running
+	secs=$(perl -e 'print time(), "\n"')
+done
+echo done
+exit 0
+
+

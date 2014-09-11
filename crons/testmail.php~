@@ -1,0 +1,62 @@
+<?php
+/*
+ * Cron job to send emails periodically
+ * Need to use php mail function, configure send mail
+ */
+
+/*
+ * First extract data from the table
+ * Put all of that onto an array
+ * Send emails using mail function
+ * Delete from table after the mail function execution
+ */
+
+
+ini_set(error_reporting, E_ALL);
+require('Mail/config.php');
+
+
+/*Pear segment starts here */
+require_once "Mail.php";
+
+
+/*Pear segment ends here*/
+
+
+
+
+
+
+//You have to send email to everyone in $send_to
+
+$from = 'chawlabhatia@gmail.com';//Change
+$to = 'vikasyadavgood@gmail.com';
+$subject = 'Testing';
+$body = 'Chutiya';
+
+$headers = array(
+    'From' => $from,
+    'To' => $to,
+    'Subject' => $subject,
+    'Reply-To' => 'vikas.yadav@iiitb.org'
+);
+
+$smtp = Mail::factory('smtp', array(
+    'host' => SMTP, //Smtp server address f your service provider
+    'port' => '465',
+    'auth' => true,
+    'username' => EMAIL_ID,
+    'password' => EMAIL_PASSWORD
+));
+
+$mail = $smtp->send($to, $headers, $body);
+
+if (PEAR::isError($mail)) {
+    echo('<p>' . $mail->getMessage() . '</p>');
+} else {
+    echo('<p>Message successfully sent!</p>');
+}
+
+
+
+
