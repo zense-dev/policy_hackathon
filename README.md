@@ -38,6 +38,11 @@ All the features are in development stage right now. Contributions are always we
 4. Go to application/config/database.php
 5. Change the database information there 
 
+###How to Contribute
+Go to "application" folder.
+There are 3 relevant folders in there -> models,views & controllers
+These 3 folders contain all the relevant codes related to the portal.
+
 #### Contact
 
 In case you need any help with this then do contact 
